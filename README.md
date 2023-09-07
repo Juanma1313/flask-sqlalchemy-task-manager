@@ -23,3 +23,26 @@
 ### [Lesson 11 - Deleting Tasks](https://github.com/Juanma1313/flask-sqlalchemy-task-manager/tree/main/11_deleting_tasks)
 
 ### [Lesson 12 - Deploying Our Project to Heroku](https://github.com/Juanma1313/flask-sqlalchemy-task-manager/tree/main/12_deploying_our_project_to_heroku)
+
+# Prepare the IDE (Gitpod or Codeanywhere)
+### Run the following  commands at linux terminal
+    ..$ pip3 install Flask-SQLAlchemy psycopg2 (only when ported to last version)
+    ..$ pip3 install 'Flask-SQLAlchemy<3' psycopg2 sqlalchemy==1.4.46 (for compatibility with CI project version)
+    (Check for successfull installation of python packages)
+
+    ..$psql
+    bydb=#CREATE DATABASE taskmanager;
+    bydb=#\q
+    ..$cd 11_deleting_tasks
+    ../11_deleting_tasks$ python3
+    >>> import env                  # Import environmental variables from local
+    >>> from taskmanager import db # Create model objects for table handling
+    (ignore warnings)
+    >>> db.create_all()     # This will create tables and relations from model.py
+    >>> [ctrl]D
+    ../11_deleting_tasks$ cd ..
+    ..$ python3 11_deleting_tasks/run.py # Runs the web server
+
+    (Open browser on port 5000)
+
+

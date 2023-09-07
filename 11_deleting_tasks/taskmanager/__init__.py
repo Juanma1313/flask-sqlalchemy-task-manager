@@ -1,8 +1,11 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-if os.path.exists("env.py"):
+if os.path.exists("11_deleting_tasks/env.py"):
+    print("Running in local environment")
     import env  # noqa
+else:
+    print("Running in server environment")
 
 
 app = Flask(__name__)
